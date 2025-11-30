@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dog Animation</title>
+<style>
+  body {
+    background:#f7f7f7;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+  }
+
+  .dog {
+    width:120px;
+    height:80px;
+    position:relative;
+    animation: move 3s linear infinite;
+  }
+
+  /* thân chó */
+  .body {
+    width:80px;
+    height:40px;
+    background:#deb887;
+    border-radius:20px;
+    position:absolute;
+    top:20px;
+    left:20px;
+  }
+
+  /* đầu */
+  .head {
+    width:35px;
+    height:35px;
+    background:#d2a679;
+    border-radius:50%;
+    position:absolute;
+    top:10px;
+    left:-10px;
+  }
+
+  /* tai */
+  .ear {
+    width:12px;
+    height:20px;
+    background:#a36a3c;
+    border-radius:10px;
+    position:absolute;
+    left:5px;
+    top:-5px;
+    animation: ear 0.4s ease-in-out infinite;
+  }
+
+  /* đuôi */
+  .tail {
+    width:20px;
+    height:10px;
+    background:#a36a3c;
+    border-radius:10px;
+    position:absolute;
+    right:-10px;
+    top:25px;
+    transform-origin:left center;
+    animation: tail 0.3s ease-in-out infinite;
+  }
+
+  /* chân */
+  .leg {
+    width:10px;
+    height:20px;
+    background:#a36a3c;
+    border-radius:5px;
+    position:absolute;
+    bottom:-5px;
+    animation: leg 0.4s ease-in-out infinite;
+  }
+  .leg.front { left:25px; }
+  .leg.back { left:55px; animation-delay:0.2s; }
+
+  /* hiệu ứng chạy */
+  @keyframes leg {
+    0% { transform:rotate(20deg); }
+    50% { transform:rotate(-20deg); }
+    100% { transform:rotate(20deg); }
+  }
+
+  @keyframes tail {
+    0% { transform:rotate(20deg); }
+    50% { transform:rotate(-20deg); }
+    100% { transform:rotate(20deg); }
+  }
+
+  @keyframes ear {
+    0% { transform:rotate(0deg); }
+    50% { transform:rotate(8deg); }
+    100% { transform:rotate(0deg); }
+  }
+
+  /* di chuyển chó qua lại */
+  @keyframes move {
+    0% { transform:translateX(-40px); }
+    50% { transform:translateX(40px); }
+    100% { transform:translateX(-40px); }
+  }
+</style>
+</head>
+<body>
+
+<div class="dog">
+  <div class="body"></div>
+  <div class="head">
+    <div class="ear"></div>
+  </div>
+  <div class="tail"></div>
+  <div class="leg front"></div>
+  <div class="leg back"></div>
+</div>
+
+</body>
+</html>
